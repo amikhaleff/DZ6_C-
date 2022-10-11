@@ -45,8 +45,8 @@
 
             }
 
-            string numbers = ReadData("Введите M целых чисел через пробел: ");
-            int[] array = Array.ConvertAll(numbers.Split(" "), int.Parse);
+            string numbers = ReadData("Введите M целых чисел через запятую: ");
+            int[] array = Array.ConvertAll(numbers.Split(',', StringSplitOptions.RemoveEmptyEntries), int.Parse);
             Print1DArray(array);
             Console.WriteLine($" Количество чисел больше нуля : {CountPositiveNumbers(array)}");
 
@@ -78,7 +78,7 @@
             {
                 double x = (b1 - b2) / (k2 - k1);
                 double y = (k2 * b1 - k1 * b2) / (k2 - k1);
-                Console.WriteLine($" Точка пересечения (x={Math.Round(x,1)} ; y={Math.Round(y,1)})");
+                Console.WriteLine($" Точка пересечения (x={Math.Round(x, 1)} ; y={Math.Round(y, 1)})");
             }
 
         }
